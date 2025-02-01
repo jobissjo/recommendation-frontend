@@ -1,0 +1,27 @@
+<p-toolbar class="p-2 shadow-md">
+    <div class="p-toolbar-group-left flex items-center">
+      <span class="text-lg font-bold">Website Name</span>
+    </div>
+  
+    <div class="p-toolbar-group-center flex gap-2">
+      <p-button label="Movies" class="p-button-text"></p-button>
+      <p-button 
+        label="Books" 
+        class="p-button-text p-disabled" 
+        pTooltip="Coming Soon" 
+        tooltipPosition="top">
+      </p-button>
+    </div>
+  
+    <div class="p-toolbar-group-right flex items-center gap-3">
+      <p-toggleButton 
+        [(ngModel)]="isDarkMode" 
+        onLabel="🌙" offLabel="☀️" 
+        (onChange)="toggleDarkMode()">
+      </p-toggleButton>
+  
+      <p-menu #menu [model]="profileMenuItems"></p-menu>
+      <p-button icon="pi pi-user" class="p-button-text" (click)="menu.toggle($event)"></p-button>
+    </div>
+  </p-toolbar>
+  
