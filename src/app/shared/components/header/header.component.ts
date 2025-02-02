@@ -7,12 +7,11 @@ import {  MenuModule } from 'primeng/menu';
 
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [ToolbarModule, ButtonModule, ToggleButton,  FormsModule, MenuModule
-  ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [ToolbarModule, ButtonModule, ToggleButton, FormsModule, MenuModule
+    ],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   isDarkMode: boolean = false;
