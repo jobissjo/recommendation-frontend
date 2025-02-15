@@ -1,0 +1,22 @@
+<section class="container">
+    <h2>Featured Recommendations</h2>
+    <div class="row">
+        <div  class="col-md-4">
+            @for (item of filteredItems; track item) {
+                <mat-card>
+                    <img mat-card-image [src]="item.image" [alt]="item.title">
+                    <mat-card-content>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-button color="primary">More Details</button>
+                    </mat-card-actions>
+                </mat-card>
+
+            }
+      
+      </div>
+    </div>
+  </section>
+  

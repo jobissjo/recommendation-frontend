@@ -1,0 +1,13 @@
+<section class="search-bar container">
+    <mat-form-field class="w-100">
+      <mat-label>Search Recommendations</mat-label>
+      <input matInput placeholder="Search movies or books..." (input)="onSearch($event)">
+    </mat-form-field>
+  
+    <mat-button-toggle-group name="filter" aria-label="Filter by category" (change)="onFilterChange($event)">
+      <mat-button-toggle value="movies">Movies</mat-button-toggle>
+      <mat-button-toggle value="books">Books</mat-button-toggle>
+      <mat-button-toggle value="all" checked>All</mat-button-toggle>
+    </mat-button-toggle-group>
+  </section>
+  

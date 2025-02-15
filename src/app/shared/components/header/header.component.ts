@@ -1,26 +1,51 @@
-import { Component } from '@angular/core';
-import { ToolbarModule } from 'primeng/toolbar';
-import { ButtonModule } from 'primeng/button';
-import { ToggleButton } from 'primeng/togglebutton';
-import { FormsModule } from '@angular/forms';
-import {  MenuModule } from 'primeng/menu';
+import { Component, Renderer2 } from '@angular/core';
+
+import { LayoutService } from '../../../core/services/layout.service';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @Component({
     selector: 'app-header',
-    imports: [ToolbarModule, ButtonModule, ToggleButton, FormsModule, MenuModule
+    imports: [
+      MatIconModule,
+      // LayoutService
     ],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   isDarkMode: boolean = false;
+  website_name:string = "Recomender";
+  // layoutService: LayoutService = inject(LayoutService);
 
-  toggleDarkMode(){
-    this.isDarkMode = true
+  constructor(
+    public layoutService: LayoutService, 
+    private readonly renderer:Renderer2
+  ){}
+
+
+  toggleDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+    this.applyTheme();
   }
-  profileMenuItems = [
-    { label: 'Profile', icon: 'pi pi-user' },
-    { label: 'Login', icon: 'pi pi-sign-in' }
-  ];
+
+  applyTheme(): void {
+    if (this.isDarkMode) {
+      this.renderer.addClass(document.body, 'dark-mode');
+      this.renderer.removeClass(document.body, 'light-mode');
+    } else {
+      this.renderer.addClass(document.body, 'light-mode');
+      this.renderer.removeClass(document.body, 'dark-mode');
+    }
+  }
+  recommendationToggle(){
+
+  }
+  
+
+ 
+    
+    
 }
+

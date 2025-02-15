@@ -1,0 +1,16 @@
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">What Our Users Say</h2>
+    <div class="row">
+        @for (review of reviews; track review) {
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3 mb-4">
+                <div class="card-body">
+                    <p class="card-text">"{{ review.feedback }}"</p>
+                    <h6 class="card-title mt-3">- {{ review.name }}</h6>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
