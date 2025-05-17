@@ -2,14 +2,29 @@ import { Component, Renderer2 } from '@angular/core';
 
 import { LayoutService } from '../../../core/services/layout.service';
 import {MatIconModule} from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @Component({
     selector: 'app-header',
     imports: [
       MatIconModule,
-      RouterModule
+      RouterModule,
+      RouterLink,
+      RouterLinkActive,
+      MatButtonModule,
+      MatIconModule,
+      MatMenuModule,
+      MatToolbarModule,
+      MatDividerModule,
+      CommonModule,
+      MatFormFieldModule
       // LayoutService
     ],
     templateUrl: './header.component.html',
@@ -19,6 +34,11 @@ export class HeaderComponent {
   isDarkMode: boolean = false;
   website_name:string = "Recomender";
   // layoutService: LayoutService = inject(LayoutService);
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   constructor(
     public layoutService: LayoutService, 

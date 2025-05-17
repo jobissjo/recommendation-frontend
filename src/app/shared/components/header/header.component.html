@@ -1,58 +1,54 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" routerLink="/">🎯 RecoHub</a>
-  
-      <!-- Mobile Toggle Button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+<mat-toolbar class="navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <!-- Logo and Brand -->
+      <div class="brand">
+        <a routerLink="/" class="brand-link">
+          <img src="logo.jpeg" alt="Logo" class="brand-logo" width="40" height="40">
+          <span class="brand-name">MovieBooks</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button mat-icon-button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation menu">
+        <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
       </button>
-  
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          
-          <!-- Home Link -->
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/">Home</a>
-          </li>
-  
-          <!-- Recommendations Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="recommendationsDropdown" role="button" data-bs-toggle="dropdown">
-              📌 Recommendations
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="/movies">🎬 Movies</a></li>
-              <li><a class="dropdown-item" routerLink="/books">📚 Books</a></li>
-              <li><a class="dropdown-item" routerLink="/trending">🔥 Trending</a></li>
-            </ul>
-          </li>
-  
-          <!-- About Us -->
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/about">About</a>
-          </li>
-  
-          <!-- Contact -->
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/contact">Contact</a>
-          </li>
-  
-          <!-- Dark Mode Toggle -->
-          <li class="nav-item d-flex align-items-center">
-            <span class="me-2 text-light">🌙</span>
-            <label class="switch">
-              <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDarkMode">
-              <span class="slider round"></span>
-            </label>
-          </li>
-  
-          <!-- Login/Register -->
-          <li class="nav-item">
-            <a class="btn btn-warning ms-3" routerLink="/auth/login">Sign In</a>
-          </li>
-  
-        </ul>
+
+      <!-- Navigation Links (Desktop & Mobile) -->
+      <div class="nav-menu" [ngClass]="{'show': isMenuOpen}">
+        <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </a>
+        <a mat-button routerLink="/movies" routerLinkActive="active">
+          <mat-icon>movie</mat-icon>
+          <span>Movies</span>
+        </a>
+        <a mat-button routerLink="/books" routerLinkActive="active">
+          <mat-icon>book</mat-icon>
+          <span>Books</span>
+        </a>
+        <a mat-button routerLink="/contact" routerLinkActive="active">
+          <mat-icon>contact_support</mat-icon>
+          <span>Contact</span>
+        </a>
+        <a mat-button routerLink="/profile">
+          <mat-icon>person</mat-icon>
+          <span>Profile</span>
+        </a>
+        <a mat-button routerLink="/favorites">
+          <mat-icon>favorite</mat-icon>
+          <span>Favorites</span>
+        </a>
+        <a mat-button routerLink="/settings">
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
+        </a>
+        <button mat-button>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
       </div>
     </div>
-  </nav>
-  
+  </div>
+</mat-toolbar>
