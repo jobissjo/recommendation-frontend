@@ -2,12 +2,14 @@ import { Component, Renderer2 } from '@angular/core';
 
 import { LayoutService } from '../../../core/services/layout.service';
 import {MatIconModule} from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
     selector: 'app-header',
     imports: [
       MatIconModule,
+      RouterModule
       // LayoutService
     ],
     templateUrl: './header.component.html',
