@@ -8,6 +8,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 interface LoginHistory {
   date: string;
@@ -20,7 +21,7 @@ interface LoginHistory {
   selector: 'app-security',
   imports: [MatCardModule, MatFormFieldModule, ReactiveFormsModule, CommonModule,
     MatTableModule, MatSlideToggleModule, MatInputModule, MatDividerModule,
-    MatIconModule
+    MatIconModule, MatButtonModule
   ],
   templateUrl: './security.component.html',
   styleUrl: './security.component.scss'

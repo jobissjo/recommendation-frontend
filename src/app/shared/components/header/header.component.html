@@ -44,7 +44,7 @@
           <mat-icon>settings</mat-icon>
           <span>Settings</span>
         </a> -->
-        <button mat-button>
+        <button mat-button (click)="logout()">
           <mat-icon>exit_to_app</mat-icon>
           @if (isMenuOpen) {
             <span>Logout</span>

@@ -1,2 +1,9 @@
-<router-outlet />
-
+@if (!isAuthRoute()) {
+    <app-header></app-header>
+}
+<main class="main-content">
+    <router-outlet />
+</main>
+@if (!isAuthRoute()) {
+    <app-footer></app-footer>
+}

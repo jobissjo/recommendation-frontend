@@ -2,13 +2,14 @@ import { Component, Renderer2 } from '@angular/core';
 
 import { LayoutService } from '../../../core/services/layout.service';
 import {MatIconModule} from '@angular/material/icon';
-import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AuthService } from '../../../auth/services/auth.service';
 
 
 @Component({
@@ -42,8 +43,12 @@ export class HeaderComponent {
 
   constructor(
     public layoutService: LayoutService, 
-    private readonly renderer:Renderer2
+    private readonly renderer:Renderer2,
+    private readonly authService: AuthService,
+    private readonly router: Router
   ){}
+
+  
 
 
   toggleDarkMode(): void {
@@ -65,6 +70,12 @@ export class HeaderComponent {
 
   }
   
+  logout(){
+    
+    this.authService.logout();
+    this.router.navigate(['/auth/login']);
+
+  }
 
  
     
