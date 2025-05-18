@@ -1,0 +1,28 @@
+<div class="profile-sidebar">
+    <div class="sidebar-header">
+        <div class="user-avatar">
+            <img [src]="avatarUrl" [alt]="userName + ' profile picture'">
+        </div>
+        <h3>{{ userName }}</h3>
+        <p>{{ userEmail }}</p>
+    </div>
+    
+    <mat-nav-list>
+        <a mat-list-item [class.active]="selectedSection === 'profile'" (click)="onSectionChange('profile')">
+            <mat-icon matListItemIcon>person</mat-icon>
+            <span matListItemTitle>Profile</span>
+        </a>
+        <a mat-list-item [class.active]="selectedSection === 'security'" (click)="onSectionChange('security')">
+            <mat-icon matListItemIcon>security</mat-icon>
+            <span matListItemTitle>Security</span>
+        </a>
+        <a mat-list-item [class.active]="selectedSection === 'preferences'" (click)="onSectionChange('preferences')">
+            <mat-icon matListItemIcon>tune</mat-icon>
+            <span matListItemTitle>Preferences</span>
+        </a>
+        <a mat-list-item [class.active]="selectedSection === 'settings'" (click)="onSectionChange('settings')">
+            <mat-icon matListItemIcon>settings</mat-icon>
+            <span matListItemTitle>Settings</span>
+        </a>
+    </mat-nav-list>
+</div>

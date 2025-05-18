@@ -36,17 +36,19 @@
           <mat-icon>person</mat-icon>
           <span>Profile</span>
         </a>
-        <a mat-button routerLink="/favorites">
+        <!-- <a mat-button routerLink="/favorites">
           <mat-icon>favorite</mat-icon>
           <span>Favorites</span>
-        </a>
-        <a mat-button routerLink="/settings">
+        </a> -->
+        <!-- <a mat-button routerLink="/settings">
           <mat-icon>settings</mat-icon>
           <span>Settings</span>
-        </a>
+        </a> -->
         <button mat-button>
           <mat-icon>exit_to_app</mat-icon>
-          <span>Logout</span>
+          @if (isMenuOpen) {
+            <span>Logout</span>
+          }
         </button>
       </div>
     </div>

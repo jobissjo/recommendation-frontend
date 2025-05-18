@@ -1,0 +1,89 @@
+<div class="profile-container">
+    <mat-card class="profile-card">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="default-avatar.png" alt="Profile">
+                <button mat-mini-fab color="primary" class="edit-avatar-btn">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <h2>User Profile</h2>
+        </div>
+
+        <mat-tab-group>
+            <mat-tab label="Profile Information">
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput formControlName="fullName" placeholder="Enter your full name">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Enter your email" type="email">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Bio</mat-label>
+                        <textarea matInput formControlName="bio" placeholder="Tell us about yourself"
+                            rows="4"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Location</mat-label>
+                        <input matInput formControlName="location" placeholder="Enter your location">
+                    </mat-form-field>
+
+                    <div formGroupName="preferences" class="preferences-section">
+                        <h3>Preferences</h3>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Favorite Movie Genres</mat-label>
+                            <input matInput formControlName="movieGenres"
+                                placeholder="Action, Drama, Comedy...">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Favorite Book Genres</mat-label>
+                            <input matInput formControlName="bookGenres"
+                                placeholder="Mystery, Romance, Sci-Fi...">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-actions">
+                        <button mat-raised-button type="submit"
+                            [disabled]="!profileForm.valid || isLoading">
+                            <mat-icon>save</mat-icon>
+                            Save Changes
+                        </button>
+                        <button mat-button type="reset">
+                            <mat-icon>refresh</mat-icon>
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </mat-tab>
+
+            <mat-tab label="Activity">
+                <div class="activity-section">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <mat-icon>movie</mat-icon>
+                            <div class="activity-content">
+                                <p>Watched "Inception"</p>
+                                <span class="activity-date">2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <mat-icon>book</mat-icon>
+                            <div class="activity-content">
+                                <p>Read "The Great Gatsby"</p>
+                                <span class="activity-date">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>

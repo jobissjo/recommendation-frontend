@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="profile-layout">
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened>
+            <app-profile-sidebar [selectedSection]="selectedSection"
+                (sectionChange)="onSectionChange($event)"></app-profile-sidebar>
+        </mat-sidenav>
+        <mat-sidenav-content class="profile-content">
+            <app-profile-main></app-profile-main>
+            
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+
+<app-footer></app-footer>

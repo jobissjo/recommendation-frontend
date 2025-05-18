@@ -12,6 +12,10 @@ export const routes: Routes = [
     {
         path: 'contact',
         loadChildren: ()=> import('./contact/contact.routes').then((r)=> r.contactRoutes),
+    },
+    {
+        path: 'profile',
+        loadChildren: ()=> import('./feature/profile/profile.routes').then((r)=> r.profileRoutes),
     }
     
 ];
