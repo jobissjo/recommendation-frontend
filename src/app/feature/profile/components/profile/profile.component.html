@@ -6,7 +6,18 @@
                 (sectionChange)="onSectionChange($event)"></app-profile-sidebar>
         </mat-sidenav>
         <mat-sidenav-content class="profile-content">
-            <app-profile-main></app-profile-main>
+            @if (selectedSection === 'profile') {
+                <app-profile-main></app-profile-main>
+            }
+            @else if (selectedSection === 'preferences') {
+                <app-preferences></app-preferences>
+            }
+            @else if(selectedSection === 'settings'){
+                <app-settings></app-settings>
+            }
+            @else if (selectedSection === 'security') {
+                <app-security></app-security>
+            }
             
         </mat-sidenav-content>
     </mat-sidenav-container>

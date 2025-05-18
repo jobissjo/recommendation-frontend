@@ -16,7 +16,7 @@ export class ProfileSidebarComponent {
   @Input() selectedSection = 'profile';
   @Input() userName = 'John Doe';
   @Input() userEmail = 'john.doe@example.com';
-  @Input() avatarUrl = 'assets/default-avatar.png';
+  @Input() avatarUrl = 'default-avatar.png';
 
   @Output() sectionChange = new EventEmitter<string>();
 

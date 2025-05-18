@@ -1,0 +1,67 @@
+// Color Palette
+$primary-light: #6b8dd6;
+$primary-dark: #4a5f8f;
+$accent-light: #8e37d7;
+$accent-dark: #6025a1;
+
+// Neutral Colors
+$background-light: #ffffff;
+$background-dark: #1a1a1a;
+$surface-light: #f5f5f5;
+$surface-dark: #2d2d2d;
+
+// Text Colors
+$text-primary-light: rgba(0, 0, 0, 0.87);
+$text-secondary-light: rgba(0, 0, 0, 0.6);
+$text-primary-dark: rgba(255, 255, 255, 0.87);
+$text-secondary-dark: rgba(255, 255, 255, 0.6);
+
+// Border Colors
+$border-light: rgba(0, 0, 0, 0.12);
+$border-dark: rgba(255, 255, 255, 0.12);
+
+// Gradient Colors
+$gradient-light: linear-gradient(135deg, rgba($primary-light, 0.1) 0%, rgba($accent-light, 0.1) 100%);
+$gradient-dark: linear-gradient(135deg, rgba($primary-dark, 0.1) 0%, rgba($accent-dark, 0.1) 100%);
+
+// Shadow Colors
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-dark: rgba(0, 0, 0, 0.3);
+
+// State Colors
+$hover-light: rgba($primary-light, 0.08);
+$hover-dark: rgba($primary-dark, 0.16);
+$active-light: rgba($primary-light, 0.12);
+$active-dark: rgba($primary-dark, 0.24);
+
+:root {
+  --primary: #{$primary-light};
+  --primary-contrast: #{$primary-dark};
+  --accent: #{$accent-light};
+  --accent-contrast: #{$accent-dark};
+  --background: #{$background-light};
+  --surface: #{$surface-light};
+  --text-primary: #{$text-primary-light};
+  --text-secondary: #{$text-secondary-light};
+  --border-color: #{$border-light};
+  --gradient: #{$gradient-light};
+  --shadow: #{$shadow-light};
+  --hover: #{$hover-light};
+  --active: #{$active-light};
+}
+
+[data-theme='dark'] {
+  --primary: #{$primary-dark};
+  --primary-contrast: #{$primary-light};
+  --accent: #{$accent-dark};
+  --accent-contrast: #{$accent-light};
+  --background: #{$background-dark};
+  --surface: #{$surface-dark};
+  --text-primary: #{$text-primary-dark};
+  --text-secondary: #{$text-secondary-dark};
+  --border-color: #{$border-dark};
+  --gradient: #{$gradient-dark};
+  --shadow: #{$shadow-dark};
+  --hover: #{$hover-dark};
+  --active: #{$active-dark};
+}

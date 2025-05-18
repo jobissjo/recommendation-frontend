@@ -6,12 +6,16 @@ import { MatInputModule } from '@angular/material/input';
 import { ProfileSidebarComponent } from '../profile-sidebar/profile-sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProfileMainComponent } from '../profile-main/profile-main.component';
+import { PreferencesComponent } from '../preferences/preferences.component';
+import { SettingsComponent } from '../settings/settings.component';
+import { SecurityComponent } from '../security/security.component';
 
 @Component({
   selector: 'app-profile',
   imports: [HeaderComponent, FooterComponent, CommonModule,
     MatInputModule, ProfileSidebarComponent, MatSidenavModule,
-    ProfileMainComponent
+    ProfileMainComponent, PreferencesComponent, SettingsComponent,
+    SecurityComponent
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'

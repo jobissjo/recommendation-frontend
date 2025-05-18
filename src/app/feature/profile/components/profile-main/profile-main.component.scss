@@ -1,6 +1,6 @@
 .profile-container {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 0rem auto;
     padding: 0 1rem;
     min-height: calc(100vh - 64px - 200px); // Adjust based on header and footer height
 }
@@ -279,3 +279,90 @@
       }
     }
   }
+
+// ... existing styles ...
+
+::ng-deep .mat-mdc-tab-group {
+  .mat-mdc-tab-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      margin-bottom: 2rem;
+  }
+
+  .mat-mdc-tab {
+      min-width: 160px;
+      padding: 0 24px;
+      height: 48px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+
+      .mdc-tab__text-label {
+          font-size: 1rem;
+          font-weight: 500;
+          text-transform: none;
+          letter-spacing: 0.3px;
+          color: rgba(0, 0, 0, 0.6);
+          transition: all 0.3s ease;
+      }
+
+      &:hover {
+          background-color: rgba(107, 141, 214, 0.04);
+
+          .mdc-tab__text-label {
+              color: #6b8dd6;
+          }
+      }
+
+      &.mdc-tab--active {
+          .mdc-tab__text-label {
+              color: #6b8dd6;
+          }
+
+          .mdc-tab-indicator__content {
+              border-color: #6b8dd6;
+          }
+      }
+  }
+
+  .mat-mdc-tab-body-content {
+      padding: 1rem 0;
+  }
+
+  .mdc-tab-indicator {
+      .mdc-tab-indicator__content {
+          border-width: 3px;
+          border-radius: 3px 3px 0 0;
+          transition: all 0.3s ease;
+      }
+  }
+}
+
+// Make tabs responsive
+@media (max-width: 600px) {
+  ::ng-deep .mat-mdc-tab-group {
+      .mat-mdc-tab {
+          min-width: 120px;
+          padding: 0 16px;
+
+          .mdc-tab__text-label {
+              font-size: 0.9rem;
+          }
+      }
+  }
+}
+
+::ng-deep .mat-mdc-tab {
+  .tab-icon {
+      margin-right: 8px;
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.6);
+      transition: color 0.3s ease;
+  }
+
+  &.mdc-tab--active .tab-icon {
+      color: #6b8dd6;
+  }
+
+  &:hover .tab-icon {
+      color: #6b8dd6;
+  }
+}

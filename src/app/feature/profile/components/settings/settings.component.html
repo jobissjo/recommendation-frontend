@@ -1,0 +1,89 @@
+<div class="settings-container">
+    <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+      <!-- Account Settings -->
+      <mat-card class="settings-section" formGroupName="account">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>account_circle</mat-icon>
+          <mat-card-title>Account Settings</mat-card-title>
+          <mat-card-subtitle>Manage your account security</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>New Password</mat-label>
+            <input matInput formControlName="password" type="password">
+          </mat-form-field>
+  
+          <mat-slide-toggle formControlName="twoFactorAuth">
+            Enable Two-Factor Authentication
+          </mat-slide-toggle>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Privacy Settings -->
+      <mat-card class="settings-section" formGroupName="privacy">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>security</mat-icon>
+          <mat-card-title>Privacy Settings</mat-card-title>
+          <mat-card-subtitle>Control your privacy preferences</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Profile Visibility</mat-label>
+            <mat-select formControlName="profileVisibility">
+              <mat-option value="public">Public</mat-option>
+              <mat-option value="friends">Friends Only</mat-option>
+              <mat-option value="private">Private</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Activity Visibility</mat-label>
+            <mat-select formControlName="activityVisibility">
+              <mat-option value="public">Public</mat-option>
+              <mat-option value="friends">Friends Only</mat-option>
+              <mat-option value="private">Private</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-slide-toggle formControlName="searchable">
+            Allow others to find me in search
+          </mat-slide-toggle>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Notification Settings -->
+      <mat-card class="settings-section" formGroupName="notifications">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>notifications</mat-icon>
+          <mat-card-title>Notification Settings</mat-card-title>
+          <mat-card-subtitle>Manage your notification preferences</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="toggle-group">
+            <mat-slide-toggle formControlName="emailNotifications">
+              Email Notifications
+            </mat-slide-toggle>
+  
+            <mat-slide-toggle formControlName="pushNotifications">
+              Push Notifications
+            </mat-slide-toggle>
+  
+            <mat-slide-toggle formControlName="activityAlerts">
+              Activity Alerts
+            </mat-slide-toggle>
+          </div>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button mat-button type="button">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save Settings</button>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,100 @@
+<div class="preferences-container">
+    <form [formGroup]="preferencesForm" (ngSubmit)="onSubmit()">
+      <!-- Theme Preferences -->
+      <mat-card class="preference-section">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>palette</mat-icon>
+          <mat-card-title>Theme Preferences</mat-card-title>
+          <mat-card-subtitle>Customize your visual experience</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Theme Mode</mat-label>
+            <mat-select formControlName="theme">
+              <mat-option value="light">Light Mode</mat-option>
+              <mat-option value="dark">Dark Mode</mat-option>
+              <mat-option value="system">System Default</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Notification Preferences -->
+      <mat-card class="preference-section" formGroupName="notifications">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>notifications</mat-icon>
+          <mat-card-title>Notification Settings</mat-card-title>
+          <mat-card-subtitle>Manage your notification preferences</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="toggle-options">
+            <mat-slide-toggle formControlName="emailNotifications">
+              Email Notifications
+            </mat-slide-toggle>
+            <mat-slide-toggle formControlName="pushNotifications">
+              Push Notifications
+            </mat-slide-toggle>
+            <mat-slide-toggle formControlName="weeklyDigest">
+              Weekly Digest
+            </mat-slide-toggle>
+          </div>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Content Preferences -->
+      <mat-card class="preference-section" formGroupName="content">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>tune</mat-icon>
+          <mat-card-title>Content Preferences</mat-card-title>
+          <mat-card-subtitle>Customize your content experience</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Preferred Movie Genres</mat-label>
+            <mat-select formControlName="movieGenres" multiple>
+              <mat-option value="action">Action</mat-option>
+              <mat-option value="comedy">Comedy</mat-option>
+              <mat-option value="drama">Drama</mat-option>
+              <mat-option value="scifi">Sci-Fi</mat-option>
+              <mat-option value="thriller">Thriller</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Preferred Book Genres</mat-label>
+            <mat-select formControlName="bookGenres" multiple>
+              <mat-option value="fiction">Fiction</mat-option>
+              <mat-option value="mystery">Mystery</mat-option>
+              <mat-option value="romance">Romance</mat-option>
+              <mat-option value="scifi">Sci-Fi</mat-option>
+              <mat-option value="biography">Biography</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Language</mat-label>
+            <mat-select formControlName="language">
+              <mat-option value="en">English</mat-option>
+              <mat-option value="es">Spanish</mat-option>
+              <mat-option value="fr">French</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Content Maturity</mat-label>
+            <mat-select formControlName="contentMaturity">
+              <mat-option value="all">All Content</mat-option>
+              <mat-option value="teen">Teen</mat-option>
+              <mat-option value="adult">Adult</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Save Button -->
+      <div class="action-buttons">
+        <button mat-button type="button">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save Preferences</button>
+      </div>
+    </form>
+  </div>
