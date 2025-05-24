@@ -1,20 +1,85 @@
 .profile-layout {
-    margin: -2rem -1rem; // Compensate for main-content padding
-    min-height: calc(100vh - 64px); // Subtract header height
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-  
-    mat-sidenav-container {
-      flex: 1;
-      height: 100%;
+  margin: 0; // Remove negative margins
+  min-height: calc(100vh - 64px);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background: var(--background);
+  position: relative; // Add this
+  z-index: 1;
+
+  mat-sidenav-container {
+    flex: 1;
+    height: 100%;
+    background: transparent;
+    position: relative; // Add this
+    z-index: 2;
+
+    mat-sidenav {
+      background: transparent;
+      width: 240px; 
     }
   }
-  
-  .profile-content {
-    padding: 2rem;
-    box-sizing: border-box;
-
-    height: 100%;
-    overflow-y: auto;
+  .profile-sidebar-container{
+    @media (max-width: 768px) {
+      width: 200px;
   }
+  }
+}
+
+::ng-deep .mat-drawer-backdrop {
+  position: fixed;
+  top: 64px; // Height of your header
+  z-index: 1; // Lower than the sidenav but higher than content
+}
+
+// Ensure sidenav is above backdrop
+::ng-deep .mat-drawer {
+  z-index: 3;
+}
+.mat-drawer-backdrop {
+  position: fixed;
+  top: 64px !important; // Height of your header
+  z-index: 1; // Lower than the sidenav but higher than content
+}
+
+
+
+.profile-content {
+  padding: 1.5rem;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  background: transparent;
+
+  @media (max-width: 768px) {
+      padding: 1rem;
+      margin-left: 0;
+  }
+}
+
+
+
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1200;
+  background: var(--background, #fff);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 1000px) {
+  .sidebar-toggle {
+    display: flex;
+  }
+}

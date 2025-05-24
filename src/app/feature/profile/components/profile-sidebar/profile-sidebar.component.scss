@@ -89,6 +89,39 @@
 
 @media (max-width: 768px) {
     .profile-sidebar {
-        width: 240px;
+        width: 64px;
+        margin: 0;
+        padding: 0;
+
+        .sidebar-header {
+            padding: 0rem 0rem;
+
+            .user-avatar {
+                width: 40px;
+                height: 40px;
+                margin: 0 auto 0.5rem;
+            }
+
+            h3, p {
+                display: none;
+            }
+        }
+
+        mat-nav-list {
+            a {
+                margin: 0.25rem;
+                width: calc(100% - 0.5rem);
+                padding: 0.5rem 0;
+                justify-content: center;
+
+                span {
+                    display: none;
+                }
+
+                mat-icon {
+                    margin: 0;
+                }
+            }
+        }
     }
 }

@@ -6,10 +6,13 @@
   
   .main-content {
     flex: 1;
-    padding-top: 64px; // Height of the header
+    // padding-top: 64px; // Height of the header
     width: 100%;
     max-width: 100dvw;
     margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }

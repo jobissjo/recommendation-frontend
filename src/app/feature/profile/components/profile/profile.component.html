@@ -1,8 +1,14 @@
-<app-header></app-header>
+
 <div class="profile-layout">
-    <mat-sidenav-container>
-        <mat-sidenav mode="side" opened>
-            <app-profile-sidebar [selectedSection]="selectedSection"
+    <button class="sidebar-toggle" (click)="isSidebarOpen = !isSidebarOpen" aria-label="Toggle sidebar">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-sidenav-container style="top: 2rem;">
+        <mat-sidenav class="profile-sidebar-container" 
+                     [mode]="'over'" 
+                     [opened]="isSidebarOpen">
+            <app-profile-sidebar 
+                [selectedSection]="selectedSection"
                 (sectionChange)="onSectionChange($event)"></app-profile-sidebar>
         </mat-sidenav>
         <mat-sidenav-content class="profile-content">
@@ -12,16 +18,12 @@
             @else if (selectedSection === 'preferences') {
                 <app-preferences></app-preferences>
             }
-            @else if(selectedSection === 'settings'){
+            @else if(selectedSection === 'settings') {
                 <app-settings></app-settings>
             }
             @else if (selectedSection === 'security') {
                 <app-security></app-security>
             }
-            
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
-
-
-<app-footer></app-footer>
