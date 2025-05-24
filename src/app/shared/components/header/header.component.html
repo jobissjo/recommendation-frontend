@@ -20,14 +20,21 @@
           <mat-icon>home</mat-icon>
           <span>Home</span>
         </a>
-        <a mat-button routerLink="/movies" routerLinkActive="active">
-          <mat-icon>movie</mat-icon>
-          <span>Movies</span>
-        </a>
-        <a mat-button routerLink="/books" routerLinkActive="active">
-          <mat-icon>book</mat-icon>
-          <span>Books</span>
-        </a>
+        <button mat-button [matMenuTriggerFor]="categoriesMenu" routerLinkActive="active">
+          <mat-icon>category</mat-icon>
+          <span>Categories</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #categoriesMenu="matMenu">
+          <a mat-menu-item routerLink="/movies">
+            <mat-icon>movie</mat-icon>
+            <span>Movies</span>
+          </a>
+          <a mat-menu-item routerLink="/books">
+            <mat-icon>book</mat-icon>
+            <span>Books</span>
+          </a>
+        </mat-menu>
         <a mat-button routerLink="/contact" routerLinkActive="active">
           <mat-icon>contact_support</mat-icon>
           <span>Contact</span>

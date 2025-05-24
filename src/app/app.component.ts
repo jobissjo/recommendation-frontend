@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { filter } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -12,10 +13,20 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 })
 export class AppComponent {
   title = 'recommendation-frontend';
-  constructor(private readonly router: Router) {}
-
-
-  isAuthRoute(): boolean {
-    return this.router.url.startsWith('/auth');
+  isAuthRoute: boolean = true;
+  constructor(private readonly router: Router) {
+    
   }
+  ngOnInit() {
+
+    this.router.events
+    .pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe(() => {
+      this.isAuthRoute = this.router.url.startsWith('/auth');
+    });
+  }
+
+  // isAuthRoute(): boolean {
+  //   return this.router.url.startsWith('/auth');
+  // }
 }

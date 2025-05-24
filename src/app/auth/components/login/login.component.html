@@ -31,7 +31,7 @@
 
               <div class="d-flex justify-content-between align-items-center mb-4">
                 <mat-checkbox color="primary" formControlName="rememberMe">Remember me</mat-checkbox>
-                <a href="#" class="text-primary text-decoration-none">Forgot password?</a>
+                <a routerLink="/auth/forgot-password" class="text-primary text-decoration-none">Forgot password?</a>
               </div>
 
               <!-- <button mat-raised-button color="primary" class="w-100 py-2" type="submit" [disabled]="loginForm.invalid">
@@ -49,6 +49,10 @@
                   <mat-spinner diameter="24" class="me-2"></mat-spinner>
                   <span>Signing in...</span>
                 }
+              </button>
+              <button mat-stroked-button color="primary" class="w-100 py-2" type="button" routerLink="/auth/guest-login">
+                <mat-icon class="me-2">person_outline</mat-icon>
+                <span>Login as Guest</span>
               </button>
               <!-- ... existing code ... -->
 

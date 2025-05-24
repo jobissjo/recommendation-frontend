@@ -1,0 +1,47 @@
+.login-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+  .login-card {
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+  
+    mat-card-header {
+      display: block;
+      margin-bottom: 2rem;
+  
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+      }
+    }
+  }
+  
+  .login-form {
+    mat-form-field {
+      .mat-form-field-wrapper {
+        margin-bottom: 0.5rem;
+      }
+    }
+  
+    .mat-icon {
+      color: #666;
+    }
+  
+    button[type="submit"] {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
