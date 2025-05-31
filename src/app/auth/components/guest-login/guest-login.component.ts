@@ -23,9 +23,10 @@ export class GuestLoginComponent {
   guestLoginForm: FormGroup;
   isLoading = false;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private readonly fb: FormBuilder, private readonly router: Router) {
     this.guestLoginForm = this.fb.group({
-      name: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       secretKey: ['', Validators.required]
     });
   }
