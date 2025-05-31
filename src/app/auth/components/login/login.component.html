@@ -15,8 +15,12 @@
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="email" placeholder="Enter your email">
                 <mat-icon matPrefix class="me-2">email</mat-icon>
-                <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</mat-error>
-                <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</mat-error>
+                @if (loginForm.get('email')?.errors?.['required']) {
+                  <mat-error>Email is required</mat-error>
+                }
+                @if (loginForm.get('email')?.errors?.['email']) {
+                  <mat-error>Please enter a valid email</mat-error>
+                }
               </mat-form-field>
 
               <mat-form-field appearance="outline" class="w-100 mb-3">
@@ -35,36 +39,36 @@
               </div>
 
               <!-- <button mat-raised-button color="primary" class="w-100 py-2" type="submit" [disabled]="loginForm.invalid">
-                <mat-icon class="me-2">login</mat-icon>
-                Sign In
-              </button> -->
-              <!-- ... existing code ... -->
-              <button mat-raised-button color="primary" class="w-100 py-2" type="submit" [disabled]="loginForm.invalid || isLoading">
-                @if (!isLoading) {
-                  <ng-container>
-                    <mat-icon class="me-2">login</mat-icon>
-                    <span>Sign In</span>
-                  </ng-container>
-                } @else {
-                  <mat-spinner diameter="24" class="me-2"></mat-spinner>
-                  <span>Signing in...</span>
-                }
-              </button>
-              <button mat-stroked-button color="primary" class="w-100 py-2" type="button" routerLink="/auth/guest-login">
-                <mat-icon class="me-2">person_outline</mat-icon>
-                <span>Login as Guest</span>
-              </button>
-              <!-- ... existing code ... -->
+              <mat-icon class="me-2">login</mat-icon>
+              Sign In
+            </button> -->
+            <!-- ... existing code ... -->
+            <button mat-raised-button color="primary" class="w-100 py-2" type="submit" [disabled]="loginForm.invalid || isLoading">
+              @if (!isLoading) {
+                <ng-container>
+                  <mat-icon class="me-2">login</mat-icon>
+                  <span>Sign In</span>
+                </ng-container>
+              } @else {
+                <mat-spinner diameter="24" class="me-2"></mat-spinner>
+                <span>Signing in...</span>
+              }
+            </button>
+            <button mat-stroked-button color="primary" class="w-100 py-2" type="button" routerLink="/auth/guest-login">
+              <mat-icon class="me-2">person_outline</mat-icon>
+              <span>Login as Guest</span>
+            </button>
+            <!-- ... existing code ... -->
 
-              <div class="text-center mt-4">
-                <p class="mb-0">Don't have an account?
-                  <a style="cursor: pointer;" routerLink="/auth/register" class="text-primary text-decoration-none ms-1">Sign up</a>
-                </p>
-              </div>
-            </form>
-          </mat-card-content>
-        </mat-card>
-      </div>
+            <div class="text-center mt-4">
+              <p class="mb-0">Don't have an account?
+                <a style="cursor: pointer;" routerLink="/auth/register" class="text-primary text-decoration-none ms-1">Sign up</a>
+              </p>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
+</div>
 </div>

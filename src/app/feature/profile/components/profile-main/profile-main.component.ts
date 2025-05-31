@@ -4,14 +4,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-profile-main',
-  imports: [ MatIconModule, MatTabsModule,
-    MatFormFieldModule, MatCardModule, ReactiveFormsModule, CommonModule,
-    MatInputModule,],
+  imports: [MatIconModule, MatTabsModule, MatFormFieldModule, MatCardModule, ReactiveFormsModule, MatInputModule],
   templateUrl: './profile-main.component.html',
   styleUrl: './profile-main.component.scss'
 })

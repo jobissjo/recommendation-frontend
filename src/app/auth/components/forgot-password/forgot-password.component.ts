@@ -5,21 +5,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
-  imports: [MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
-    MatIconModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    CommonModule,
-    MatProgressSpinnerModule,
-    RouterModule],
+  imports: [MatFormFieldModule, MatButtonModule, MatInputModule, MatIconModule, MatCardModule, ReactiveFormsModule, MatProgressSpinnerModule, RouterModule],
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.scss', './../auth.common.style.scss']
 })

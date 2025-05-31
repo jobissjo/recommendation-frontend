@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -6,7 +6,7 @@ import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-recommendation-list',
-  imports: [MatCardModule, CommonModule, MatButtonModule],
+  imports: [MatCardModule, MatButtonModule],
   templateUrl: './recommendation-list.component.html',
   styleUrl: './recommendation-list.component.scss'
 })

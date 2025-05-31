@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,12 +12,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-preferences',
-  imports: [CommonModule, MatCardModule,
-    MatSlideToggleModule, MatSelectModule,
-    MatFormFieldModule, MatInputModule, 
-    MatButtonModule, MatIconModule,
-    MatDividerModule, ReactiveFormsModule
-  ],
+  imports: [MatCardModule, MatSlideToggleModule, MatSelectModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDividerModule, ReactiveFormsModule],
   templateUrl: './preferences.component.html',
   styleUrl: './preferences.component.scss'
 })

@@ -1,39 +1,53 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-    <mat-form-field appearance="outline" class="w-100 mb-3">
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="name" placeholder="Your name">
-      <mat-error *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</mat-error>
-      <mat-error *ngIf="contactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline" class="w-100 mb-3">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" placeholder="your.email@example.com" type="email">
-      <mat-error *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</mat-error>
-      <mat-error *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email address</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline" class="w-100 mb-3">
-      <mat-label>Subject</mat-label>
-      <mat-select formControlName="subject">
-        <mat-option value="general">General Inquiry</mat-option>
-        <mat-option value="support">Technical Support</mat-option>
-        <mat-option value="feedback">Feedback</mat-option>
-        <mat-option value="other">Other</mat-option>
-      </mat-select>
-      <mat-error *ngIf="contactForm.get('subject')?.errors?.['required']">Subject is required</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline" class="w-100 mb-4">
-      <mat-label>Message</mat-label>
-      <textarea matInput formControlName="message" rows="6" placeholder="Your message"></textarea>
-      <mat-error *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</mat-error>
-      <mat-error *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 10 characters</mat-error>
-    </mat-form-field>
-  
-    <div class="text-center">
-      <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid" class="px-5 py-2">
-        Send Message
-      </button>
-    </div>
-  </form>
+  <mat-form-field appearance="outline" class="w-100 mb-3">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" placeholder="Your name">
+    @if (contactForm.get('name')?.errors?.['required']) {
+      <mat-error>Name is required</mat-error>
+    }
+    @if (contactForm.get('name')?.errors?.['minlength']) {
+      <mat-error>Name must be at least 2 characters</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100 mb-3">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" placeholder="your.email@example.com" type="email">
+    @if (contactForm.get('email')?.errors?.['required']) {
+      <mat-error>Email is required</mat-error>
+    }
+    @if (contactForm.get('email')?.errors?.['email']) {
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100 mb-3">
+    <mat-label>Subject</mat-label>
+    <mat-select formControlName="subject">
+      <mat-option value="general">General Inquiry</mat-option>
+      <mat-option value="support">Technical Support</mat-option>
+      <mat-option value="feedback">Feedback</mat-option>
+      <mat-option value="other">Other</mat-option>
+    </mat-select>
+    @if (contactForm.get('subject')?.errors?.['required']) {
+      <mat-error>Subject is required</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100 mb-4">
+    <mat-label>Message</mat-label>
+    <textarea matInput formControlName="message" rows="6" placeholder="Your message"></textarea>
+    @if (contactForm.get('message')?.errors?.['required']) {
+      <mat-error>Message is required</mat-error>
+    }
+    @if (contactForm.get('message')?.errors?.['minlength']) {
+      <mat-error>Message must be at least 10 characters</mat-error>
+    }
+  </mat-form-field>
+
+  <div class="text-center">
+    <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid" class="px-5 py-2">
+      Send Message
+    </button>
+  </div>
+</form>

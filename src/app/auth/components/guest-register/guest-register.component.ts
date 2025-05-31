@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,12 +12,7 @@ import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-guest-register',
-  imports: [MatFormFieldModule, MatButtonModule,
-    MatInputModule, ReactiveFormsModule,
-    MatCheckboxModule, CommonModule,
-    MatProgressSpinnerModule, RouterModule, MatCardModule,
-    MatIconModule
-  ],
+  imports: [MatFormFieldModule, MatButtonModule, MatInputModule, ReactiveFormsModule, MatCheckboxModule, MatProgressSpinnerModule, RouterModule, MatCardModule, MatIconModule],
   templateUrl: './guest-register.component.html',
   styleUrl: './guest-register.component.scss'
 })

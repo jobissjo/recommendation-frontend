@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router, RouterModule } from '@angular/router';
 
@@ -18,10 +18,9 @@ import { Router, RouterModule } from '@angular/router';
     MatIconModule,
     MatCardModule,
     ReactiveFormsModule,
-    CommonModule,
     MatProgressSpinnerModule,
     RouterModule
-  ],
+],
   templateUrl: './reset-password.component.html',
   styleUrls: ['./reset-password.component.scss', './../auth.common.style.scss']
 })

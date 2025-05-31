@@ -8,15 +8,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-register',
-  imports: [FormsModule, RouterModule,
-    ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatInputModule,
-    MatProgressSpinnerModule, MatCardModule,MatCheckboxModule, MatIconModule,CommonModule
-  ],
+  imports: [FormsModule, RouterModule, ReactiveFormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatProgressSpinnerModule, MatCardModule, MatCheckboxModule, MatIconModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss', './../auth.component.scss']
 })

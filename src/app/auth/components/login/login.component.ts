@@ -6,15 +6,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { CommonModule } from '@angular/common';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [MatFormFieldModule, MatButtonModule, MatInputModule, MatIconModule, MatCardModule, FormsModule, 
-    ReactiveFormsModule,MatCheckboxModule, CommonModule, MatProgressSpinnerModule,RouterModule
-  ],
+  imports: [MatFormFieldModule, MatButtonModule, MatInputModule, MatIconModule, MatCardModule, FormsModule, ReactiveFormsModule, MatCheckboxModule, MatProgressSpinnerModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss', './../auth.component.scss' ]
 })

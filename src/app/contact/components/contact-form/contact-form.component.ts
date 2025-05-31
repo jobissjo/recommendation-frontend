@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,10 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule, MatFormFieldModule,
-    MatInputModule, MatButtonModule, MatSelectModule,
-    CommonModule
-  ],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })

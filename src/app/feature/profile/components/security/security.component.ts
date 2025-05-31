@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -19,10 +19,7 @@ interface LoginHistory {
 
 @Component({
   selector: 'app-security',
-  imports: [MatCardModule, MatFormFieldModule, ReactiveFormsModule, CommonModule,
-    MatTableModule, MatSlideToggleModule, MatInputModule, MatDividerModule,
-    MatIconModule, MatButtonModule
-  ],
+  imports: [MatCardModule, MatFormFieldModule, ReactiveFormsModule, MatTableModule, MatSlideToggleModule, MatInputModule, MatDividerModule, MatIconModule, MatButtonModule],
   templateUrl: './security.component.html',
   styleUrl: './security.component.scss'
 })
