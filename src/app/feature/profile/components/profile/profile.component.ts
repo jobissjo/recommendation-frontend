@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../../../shared/components/header/header.component';
-import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { ProfileSidebarComponent } from '../profile-sidebar/profile-sidebar.component';
@@ -14,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-profile',
-  imports: [HeaderComponent, FooterComponent, MatInputModule, ProfileSidebarComponent, ProfileMainComponent, PreferencesComponent, SettingsComponent, SecurityComponent, MatSidenavModule, MatMenuModule, MatIconModule],
+  imports: [MatInputModule, ProfileSidebarComponent, ProfileMainComponent, PreferencesComponent, SettingsComponent, SecurityComponent, MatSidenavModule, MatMenuModule, MatIconModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
